@@ -1,0 +1,7 @@
+<h2>Appointment's show page:</h2>
+<h3>Appointment: <%= @appointment.date %> at <%= @appointment.time %></h3>
+<h3>Doctor: <%= link_to @appointment.doctor.name, doctor_path(@appointment.doctor) %></h3>
+<h3>Patient: <%= link_to @appointment.patient.name, patient_path(@appointment.patient) %></h3>
+
+<!-- page that shows the date, time, patient,
+and doctor for that particular appointment.  -->
