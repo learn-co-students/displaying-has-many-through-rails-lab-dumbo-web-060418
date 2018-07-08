@@ -1,0 +1,13 @@
+<h1>Doctor Profile</h1>
+
+<h4><%= label_tag "Name:" %></h4>
+<%= @doctor.name %>
+<h4><%= label_tag "Department:" %></h4>
+<%= @doctor.department %>
+<% @doctor.appointments.each do |appointment| %>
+<h4><%= label_tag "Appointment:" %></h4>
+<%= appointment.appointment_datetime.strftime("%B %d, %Y at %H:%M") %>
+<br>
+<%= label_tag "Patient:" %>
+<%= link_to appointment.patient.name, patient_path(appointment.patient)%>
+<% end %>
